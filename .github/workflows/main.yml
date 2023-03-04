@@ -14,10 +14,5 @@ jobs:
           with:
             packages: cmake gcc-g++ libtool bintools automake make
         - run: |
-          # This is a real bash script!
-          basic() {
-              ls -Al
-              pwd
-          }
-          basic
-        shell: C:\tools\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+            ls
+          
