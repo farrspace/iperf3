@@ -5,6 +5,9 @@ jobs:
   build:
     name: build
     runs-on: windows-latest
+    defaults:
+      run:
+        shell: C:\tools\cygwin\bin\bash.exe -o igncr '{0}'
     steps:
         - name: Install MinGW
           uses: egor-tensin/setup-mingw@v2.2.0
@@ -12,7 +15,8 @@ jobs:
         - name: Set up Cygwin
           uses: egor-tensin/setup-cygwin@v4
           with:
-            packages: cmake gcc-g++ libtool bintools automake make
-        - run: |
+            packages: cmake gcc-g++ libtool bintools automake make\
+        - name: configure and make 
+          run: |
             ls
-          
+
